@@ -1,5 +1,8 @@
-baseURL = "/"
-title = "DOCS"
+baseURL = "https://yyrise.github.io"
+#languageCode = "en-us"
+title = "屁狗多多"
+author = "YYRise"
+#title = "DOCS"
 theme = "zdoc"
 
 defaultContentLanguage = "en"
