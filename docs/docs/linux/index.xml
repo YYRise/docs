@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on ZDoc</title>
-    <link>https://yyrise.github.io/docs/linux/</link>
+    <link>https://yyrise.github.io/docs/docs/linux/</link>
     <description>Recent content in Linux on ZDoc</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Fri, 18 Dec 2020 11:05:28 +0800</lastBuildDate>
     
-        <atom:link href="https://yyrise.github.io/docs/linux/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://yyrise.github.io/docs/docs/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>Crontab 定时任务</title>
-        <link>https://yyrise.github.io/docs/linux/crontab/</link>
+        <link>https://yyrise.github.io/docs/docs/linux/crontab/</link>
         <pubDate>Fri, 18 Dec 2020 11:05:49 +0800</pubDate>
         
-        <guid>https://yyrise.github.io/docs/linux/crontab/</guid>
+        <guid>https://yyrise.github.io/docs/docs/linux/crontab/</guid>
         <description>Sample Image: Image with title, caption, alt, ...   -- 命令  编辑当前用户的crontab crontab -e 编辑其他用户的crontab crontab -u username -e 查看当前用户的crontab crontab -l 查看其他用户的crontab crontab -u username -l  日志  执行的日志文件   /var/log/cron
   自定义输出日志   1  0 0 * * * php /home/crontab/cli.php &amp;gt;&amp;gt; /home/crontab/cli.log 2&amp;gt;&amp;amp;1   把错误输出和标准输出都输出到 cli.log 中。
  规则 1 2 3 4 5 6 7 8  * * * * * - - - - - | | | | | | | | | +----- day of week (0 - 7) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat | | | +---------- month (1 - 12) OR jan,feb,mar,apr .</description>
