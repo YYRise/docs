@@ -65,6 +65,12 @@ $ git config --system core.editor <editor>
 # 显示commit历史，以及每次commit发生变更的文件
 $ git log --stat
 
+# 每次修改的文件列表, 显示状态
+$ git log --name-status
+
+# 每次修改的文件列表
+$ git log --name-only 
+
 # 根据关键词搜索提交历史
 $ git log -S [keyword]
 
