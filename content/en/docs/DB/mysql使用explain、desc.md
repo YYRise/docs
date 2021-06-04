@@ -3,6 +3,9 @@ title: "Mysql使用explain/desc"
 date: 2021-03-16T15:22:06+08:00
 draft: false
 ---
+
+[参考](https://segmentfault.com/a/1190000008131735)
+
 ## 1. 用法
 select语句前加上explain或desc
 
