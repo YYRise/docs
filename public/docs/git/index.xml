@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on ZDoc</title>
+    <link>/docs/git/</link>
+    <description>Recent content in Git on ZDoc</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Thu, 17 Dec 2020 09:29:35 +0800</lastBuildDate>
+    
+        <atom:link href="/docs/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>忽略无扩展名文件</title>
+        <link>/docs/git/%E5%9C%A8.gitignore%E4%B8%AD%E5%BF%BD%E7%95%A5%E6%8E%89%E6%97%A0%E6%89%A9%E5%B1%95%E5%90%8D%E7%9A%84unix%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/</link>
+        <pubDate>Thu, 17 Dec 2020 11:18:18 +0800</pubDate>
+        
+        <guid>/docs/git/%E5%9C%A8.gitignore%E4%B8%AD%E5%BF%BD%E7%95%A5%E6%8E%89%E6%97%A0%E6%89%A9%E5%B1%95%E5%90%8D%E7%9A%84unix%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/</guid>
+        <description>如果想忽略掉Unix中可执行文件，
+在 .gitignore 文件的最前面添加
+1 2 3  * !*.* !*/   </description>
+      </item>
+      
+      <item>
+        <title>配置多个远程Git仓库</title>
+        <link>/docs/git/%E6%9C%AC%E5%9C%B0%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AA%E8%BF%9C%E7%A8%8Bgit%E4%BB%93%E5%BA%93/</link>
+        <pubDate>Thu, 17 Dec 2020 11:14:00 +0800</pubDate>
+        
+        <guid>/docs/git/%E6%9C%AC%E5%9C%B0%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AA%E8%BF%9C%E7%A8%8Bgit%E4%BB%93%E5%BA%93/</guid>
+        <description>[TOC]
+情景一：不同的库分别 pull/push 1. 使用git命令配置 1 2 3 4 5 6 7 8 9 10 11 12  # 添加 git remote add 名字 仓库地址 # 查看远程仓库 git remote -v # origin 仓库地址 (fetch) # origin 仓库地址 (push) # 名字 仓库地址 (fetch) # 名字 仓库地址 (push) # 删除 git remote remove 名字   2. 修改.git/config 文件 1 2 3 4 5 6 7 8 9 10 11  [remote &amp;#34;origin&amp;#34;] url = 仓库地址 fetch = +refs/heads/*:refs/remotes/origin/* [remote &amp;#34;名字&amp;#34;] url = 仓库地址 fetch = +refs/heads/*:refs/remotes/origin/* [branch &amp;#34;master&amp;#34;] remote = origin remote = 名字 merge = refs/heads/master rebase = true   3.</description>
+      </item>
+      
+      <item>
+        <title>Git命令</title>
+        <link>/docs/git/git%E5%91%BD%E4%BB%A4/</link>
+        <pubDate>Thu, 17 Dec 2020 09:29:00 +0800</pubDate>
+        
+        <guid>/docs/git/git%E5%91%BD%E4%BB%A4/</guid>
+        <description>参考
+ 常用 Git 命令清单    Workspace：工作区 Index / Stage：暂存区 Repository：仓库区（或本地仓库） Remote：远程仓库   新建 创建一个新的 git 版本库。这个版本库的配置、存储等信息会被保存到.git 文件夹中
+1 2 3 4 5 6 7 8 9 10 11 12  # 初始化当前项目 $ git init # 新建一个目录，将其初始化为Git代码库 $ git init [project-name] # 在指定目录创建一个空的 Git 仓库。运行这个命令会创建一个名为 directory，只包含 .git 子目录的空目录。 $ git init --bare &amp;lt;directory&amp;gt; # 下载一个项目和它的整个代码历史 # 这个命令就是将一个版本库拷贝到另一个目录中，同时也将分支都拷贝到新的版本库中。这样就可以在新的版本库中提交到远程分支 $ git clone [url]   配置 更改设置。可以是版本库的设置，也可以是系统的或全局的
+也可以直接修改 .</description>
+      </item>
+      
+    
+  </channel>
+</rss>
