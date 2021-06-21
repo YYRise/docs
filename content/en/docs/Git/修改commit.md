@@ -6,15 +6,15 @@ draft: false
 
 ## 1.修改message
 
-### 修改最近一次提交的
+### 1.1 修改最近一次提交的
 `git commit --amend`
 
 ## 2. 修改提交者名字和邮箱
 
-### 改最近一次提交的
+### 2.1 修改最近一次提交的
 `git commit --amend --author="NewAuthor <NewEmail@address.com>"`
 
-### 多个修改
+### 2.2 多个修改
 ```sh
 #!/bin/sh
  
