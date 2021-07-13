@@ -4,6 +4,8 @@ date: 2021-07-09T10:21:00+08:00
 draft: false
 ---
 
+![img](/images/Go/go.mod.png)
+
 ## 1. 版本格式
 
 ### 1.1 使用git tag
@@ -14,7 +16,7 @@ draft: false
 
 ### 1.2 无git tag
 
-- 一般格式为： `vmajor.minor.patch-yyyyMMddhhmmss-comitid`
+- 使用伪版本号： `vmajor.minor.patch-yyyyMMddhhmmss-comitid`
 
 `github.com/valyala/tcplisten v0.0.0-20161114210144-ceec8f93295a`
 
