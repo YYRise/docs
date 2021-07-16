@@ -21,7 +21,7 @@ draft: false
 
 ## 2. 状态码的类别
 
-| | 类别 | 原因短语 |
+| 类别 | 原因短语 |
 | --- | --- | --- |
 | 1xx | Informational(信息性状态码) | 接收的请求正在处理 | 
 | 2xx | Success (成功状态码) | 请求正常处理完毕 |
@@ -29,6 +29,40 @@ draft: false
 | 4xx | Client Error (客户端错误状态码) | 服务器无法处理请求 |
 | 5xx | Server Error (服务器错误状态码) | 服务器处理请求错误 |
 
+### 2.1 2XX 成功
+
+| 状态码 | 含义 | 说明 |
+| :--- | :--- | :--- |
+| 204 | No Content | 请求成功处理，但不返回实体，浏览器页面不更新 | 
+| 206 | Partial Content | 成功处理客户端Content-Range指定的范围请求 |
+
+### 2.2 3XX 重定向
+
+| 状态码 | 含义 | 说明 |
+| :--- | :--- | :--- |
+| 301 | Moved Permanently | 永久性重定向 | 
+| 302 | Found | 临时性重定向，客户端或代理可能会将POST变换成GET | 
+| 303 | See Other | 应使用GET方法从另一个URI请求资源，与 302 状态码有区别 |
+| 304 | Not Modified | 未满足客户端附带条件（请求报文中含If-Match，If-Modified-Since，If-None-Match，If-Range，If-Unmodified-Since）的GET请求 |
+| 307 | Temporary Redirect | 临时重定向，与302相同，但请求方法不会变 |
+| 308 | Permanent Redirect | 和 301 是一致的，区别在于，308 状态码不允许浏览器将原本为 POST 的请求重定向到 GET 请求上 |
+
+### 2.3 4XX 客户端错误
+
+| 状态码 | 含义 | 说明 |
+| :--- | :--- | :--- |
+| 400 | Bad Request | 请求报文中存在语法错误 |
+| 401 | Unauthorized | 请求需要有通过 HTTP 认证（BASIC 认证、DIGEST 认证）的认证信息。若之前已进行过 1 次请求，则表示用 户认证失败 |
+| 403 | Forbidden | 访问被拒绝，没有必要给出拒绝的详细理由 |
+| 404 | Not Found | 服务器上无法找到请求的资源，也可以在服务器端拒绝请求且不想说明理由时使用 |
+
+### 2.4 5XX 服务器错误
+
+| 状态码 | 含义 | 说明 |
+| :--- | :--- | :--- |
+| 500 | Internal Server Error | 服务器端在执行请求时发生了错误 |
+| 503 | Service Unavailable | 服务器暂时处于超负载或正在进行停机维护，现在无法
+处理请求 | 
 
 ## 3. HTTP/1.1 首部字段
 
@@ -70,6 +104,11 @@ draft: false
 | TE | 传输编码的优先级 |
 | User-Agent | HTTP 客户端程序的信息 |
 
+- Host 在 HTTP/1.1 规范内是唯一一个必须被包含在请求内的首部字段。
+> 首部字段 Host 和以单台服务器分配多个域名的虚拟主机的工作机制有很密切的关联，这是首部字段 Host 必须存在的意义。
+
+> 请求被发送至服务器时，请求中的主机名会用 IP 地址直接替换解决。但如果这时，相同的 IP 地址下部署运行着多个域名，那么服务器就会无法理解究竟是哪个域名对应的请求。因此，就需要使用首部字段 Host 来明确指出请求的主机名。若服务器未设定主机名，那直接发送一个空值即可
+
 ### 3.3 响应首部字段
 
 | 首部字段名 | 说明 |
@@ -98,3 +137,18 @@ draft: false
 | Content-Type | 实体主体的媒体类型 |
 | Expires | 实体主体过期的日期时间 |
 | Last-Modified | 资源的最后修改日期时间 |
+
+## 4. Cookie
+
+### 4.1 Set-Cookie 字段属性
+
+| 属性 | 说明 |
+| :--- | :--- |
+| NAME=VALUE | 赋予 Cookie 的名称和其值（必需项）|
+| expires=DATE | Cookie 的有效期（默认为浏览器关闭前为止）|
+| path=PATH | 将服务器上的文件目录作为Cookie的适用对象（若不指定则默认为文档所在的文件目录）|
+| domain=域名 |作为 Cookie 适用对象的域名 （若不指定则默认为创建 Cookie的服务器的域名）|
+| Secure | 仅在 HTTPS 安全通信时才会发送 Cookie |
+| HttpOnly | 加以限制，使 Cookie 不能被 JavaScript 脚本访问 |
+
+> 一旦 Cookie 从服务器端发送至客户端，服务器端就不存在可以显式删除 Cookie 的方法。但可通过覆盖已过期的 Cookie，实现对客户端 Cookie 的实质性删除操作。
