@@ -93,6 +93,9 @@ $ git log -5 --pretty --oneline
 # 查看某些行的所有操作
 $ git log -L 开始行号, 结束行号:文件
 
+# 查看远程仓库的log
+$ git log remotes/origin/分支名
+
 # 显示所有提交过的用户，按提交次数排序
 $ git shortlog -sn
 
@@ -137,16 +140,16 @@ $ git show [commit]:[filename]
 $ git reflog
 
 # 查看远程分支
-$ git br -r
+$ git branch -r
 
 # 查看各个分支最后提交信息
-$ git br -v
+$ git branch -v
 
 # 查看已经被合并到当前分支的分支
-$ git br --merged
+$ git branch --merged
 
 # 查看尚未被合并到当前分支的分支
-$ git br --no-merged
+$ git branch --no-merged
 ```
 ## 分支
 
