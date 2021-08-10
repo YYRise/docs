@@ -55,6 +55,9 @@ $ git config --global alias.<alias-name> <git-command>
 # 修改默认编辑器。
 # 默认情况下，Git 会调用你通过环境变量 $VISUAL 或 $EDITOR 设置的文本编辑器， 如果没有设置，默认则会调用 vi 来创建和编辑你的提交以及标签信息。
 $ git config --system core.editor <editor>
+
+# 设置git忽略文件权限
+git config core.filemode false
 ```
 
 ## 日志等信息
