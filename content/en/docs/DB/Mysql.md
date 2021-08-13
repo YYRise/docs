@@ -30,5 +30,26 @@ draft: false
 > 缺点：① 必须多查询一次，会影响整体性能
 > ② 路由表太大，可能会成为瓶颈，再将路由表分库分表
 
+## 3. 乐观锁和悲观所
 
+### 3.1 悲观锁
+拿数据时上锁
+用法：一般使用`for update`： `select ... where ... for update`
+- `for update`是 **行级锁**，也叫排它锁。
+- where条件带有主键，会锁行数据，没有则会锁表。
+> 1. 明确指定主键，并且数据真实存在，row lock
+> 2. 明确指定主键，但数据不存在，无lock
+> 3. 主键不明确（`<`, `>`, `like '%*%'`）或无主键，table lock
+> 4. 
+- `for update`仅适用于InnoDB，且必须在事务处理模块(BEGIN/COMMIT)中才能生效
+- 行锁永远是独占方式锁。
+- 释放共享更新锁条件：
+> 1. 执行提交（COMMIT）语句
+> 2. 退出数据库
+> 3. 程序停止运行
 
+### 3.2 乐观锁
+更新数据时上锁
+
+用法：在表中添加额外字段（版本version、时间戳timestamp、 商品数据number），提交更新的时候判断当前的（version或timestamp或number）是否和第一次取出来的（version或timestamp或number）一样
+> `update ... where ... and version = {$version_origin}`
