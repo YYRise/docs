@@ -130,6 +130,9 @@ $ git diff --cached
 # 仅仅比较统计信息
 $ git diff --stat
 
+# 比较两个分支的文件差异
+$ git diff branch1 branch2 文件名(带路径)   
+
 # 显示某次提交的元数据和内容变化
 $ git show [commit]
 
@@ -209,23 +212,23 @@ $ git cherry-pick [commit]
 $ git branch -d [branch-name]
 
 # 强制删除某个分支 (未被合并的分支被删除的时候需要强制)
-$ git br -D <branch>
+$ git branch -D <branch>
 
 # 删除远程分支
 $ git push origin --delete [branch-name
 ]$ git branch -dr [remote/branch]
 
 # 切换到某个分支
-$ git co <branch>
+$ git checkout <branch>
 
 # 基于branch创建新的new_branch
-$ git co -b <new_branch> <branch>
+$ git checkout -b <new_branch> <branch>
 
 # 把某次历史提交记录checkout出来，但无分支信息，切换到其他分支会自动删除
-$ git co commit_id
+$ git checkout commit_id
 
 # 把某次历史提交记录checkout出来，创建成一个分支
-$ git co commit_id -b <new_branch>
+$ git checkout commit_id -b <new_branch>
 ```
 
 ## 远程同步
@@ -261,6 +264,12 @@ $ git push -f
 
 # 推送所有分支到远程仓库
 $ git push [remote] --all
+```
+
+### git pull 强制覆盖本地的代码
+```sh
+$ git fetch --all
+$ git reset --hard origin/<branch_name>
 ```
 
 ## 撤销
