@@ -71,3 +71,7 @@ alter table table_name drop primary key;
 - `max()` 和 `group by` 结合使用
 `select *, max(create_time) from table_name where condition group by id`
 > * 一次遍历即可取出结果
+
+## 5. 给用户授权数据库
+`grant all privileges on 授权的数据库.* to 'user'@'%';`
+`flush privileges;`
