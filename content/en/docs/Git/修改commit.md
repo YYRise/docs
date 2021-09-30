@@ -37,3 +37,10 @@ fi
 ' --tag-name-filter cat -- --branches --tags
 
 ```
+
+## 3. 修改上次提交时间
+
+`GIT_COMMITTER_DATE="2021-09-29T09:51:07" git commit --amend --date="2021-09-29T09:51:07"`
+
+> 第一个日期是提交日期，
+> 第二个日期是作者日期。
