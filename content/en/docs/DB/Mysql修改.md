@@ -75,3 +75,33 @@ alter table table_name drop primary key;
 ## 5. 给用户授权数据库
 `grant all privileges on 授权的数据库.* to 'user'@'%';`
 `flush privileges;`
+
+## 6. 修改编码解决命令行查询中文乱码
+
+### 6.1 查看当前配置的编码
+```sh
+mysql> show variables like 'character_set_%';
+
++--------------------------+------------------------------------+
+| Variable_name            | Value                              |
++--------------------------+------------------------------------+
+| character_set_client     | latin1                             |
+| character_set_connection | latin1                             |
+| character_set_database   | utf8                               |
+| character_set_filesystem | binary                             |
+| character_set_results    | latin1                             |
+| character_set_server     | utf8                               |
+| character_set_system     | utf8                               |
+| character_sets_dir       | /usr/local/mysql56/share/charsets/ |
++--------------------------+------------------------------------+
+8 rows in set (0.03 sec)
+```
+
+### 6.2 设置编码
+```sh
+mysql> set character_set_client=utf8;
+
+mysql> set character_set_results=utf8;
+
+mysql> set character_set_connection=utf8;
+```
