@@ -105,3 +105,9 @@ mysql> set character_set_results=utf8;
 
 mysql> set character_set_connection=utf8;
 ```
+
+### 6.3 longblob 输出中文乱码
+
+```sh
+SELECT cast(req as CHAR) as req,cast(rsp as CHAR) FROM table_name WHERE ...
+```
