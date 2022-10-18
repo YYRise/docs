@@ -388,6 +388,18 @@ $ git reset dha78as
 $ git reset --hard dha78as
 ```
 
+## 忽略本地文件修改
+```sh
+$ git update-index --assume-unchanged conf/a.conf
+
+# 恢复
+$ git update-index --assume-unchanged conf/a.conf
+
+# 查看当前忽略的文件列表
+$ git ls-files -v | grep -e "^[hsmrck]"
+
+```
+
 ## 其他
 ```sh
 # 生成一个可供发布的压缩包
