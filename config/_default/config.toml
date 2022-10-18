@@ -47,3 +47,19 @@ disableKinds = ["taxonomyTerm"]
 
 [taxonomies]
   tag = "tags"
+
+[yuque-sync]
+# 用户名
+user = "yyrise"
+# 知识库路径
+kb = "gpesw5"
+# 私密仓库需要token
+token = "RQ3f2dY7UJJRWKro2TJrkNvKt0Qf0L0WNGU7Qj13"
+# api
+api = "https://www.yuque.com/api/v2"
+# port
+port = 8081
+# sync after command
+aftercmd = ""
+# markdown文件目录文件路径为content/${article}
+article = "en"
