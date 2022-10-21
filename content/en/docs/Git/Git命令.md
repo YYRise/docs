@@ -400,6 +400,12 @@ $ git ls-files -v | grep -e "^[hsmrck]"
 
 ```
 
+## 查看某行的修改历史
+```sh
+$ git log -L 10,15:conf/a.conf
+
+```
+
 ## 其他
 ```sh
 # 生成一个可供发布的压缩包
