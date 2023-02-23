@@ -215,8 +215,8 @@ $ git branch -d [branch-name]
 $ git branch -D <branch>
 
 # 删除远程分支
-$ git push origin --delete [branch-name
-]$ git branch -dr [remote/branch]
+$ git push origin --delete [branch-name]
+$ git branch -dr [remote/branch]
 
 # 切换到某个分支
 $ git checkout <branch>
@@ -393,7 +393,7 @@ $ git reset --hard dha78as
 $ git update-index --assume-unchanged conf/a.conf
 
 # 恢复
-$ git update-index --assume-unchanged conf/a.conf
+$ git update-index --no-assume-unchanged conf/a.conf
 
 # 查看当前忽略的文件列表
 $ git ls-files -v | grep -e "^[hsmrck]"
