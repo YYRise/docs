@@ -163,3 +163,10 @@ load data inpath 'hdfs://namenode/path/to/data/2019-11-01/13/123456' overwrite i
 ```sh
 load data local inpath '{$file_path}' [overwrite] into table {$table_name};
 ``` 
+### 6.3 导出数据到本地
+```sh
+hive -e "set hive.cli.print.header=true; select * from data_table where 条件" | sed 's/[\t]/,/g'  > hhd.csv
+```
+`set hive.cli.print.header=true` 能将表头输出；
+`sed 's/[\t]/,/g'` 将\t替换成,
+`>` 将shell里打印的内容输出到文件
